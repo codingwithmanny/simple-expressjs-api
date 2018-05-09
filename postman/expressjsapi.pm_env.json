@@ -1,0 +1,22 @@
+{
+  "id": "b69cd9a6-c726-d952-622d-4081212cd84a",
+  "name": "ExpressJS API",
+  "values": [
+    {
+      "enabled": true,
+      "key": "url",
+      "value": "http://localhost:5000",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "token",
+      "value": "null",
+      "type": "text"
+    }
+  ],
+  "timestamp": 1525825181347,
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2018-05-09T00:19:42.990Z",
+  "_postman_exported_using": "Postman/5.5.3"
+}

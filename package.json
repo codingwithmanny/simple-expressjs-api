@@ -1,0 +1,36 @@
+{
+  "name": "expressjs-api",
+  "version": "1.0.0",
+  "description": "Simple expressjs api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpineault/expressjs-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "api",
+    "endpoints",
+    "javascript",
+    "es6",
+    "ecmascript"
+  ],
+  "author": "Manuel Pineault",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpineault/expressjs-api/issues"
+  },
+  "homepage": "https://github.com/mpineault/expressjs-api#readme",
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.22.1"
+  }
+}

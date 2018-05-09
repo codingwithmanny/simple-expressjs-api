@@ -1,0 +1,97 @@
+{
+	"info": {
+		"name": "ExpressJS API",
+		"_postman_id": "9e48d2ad-3c20-8fb7-9c8c-2cc168d0b021",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AUTH LOGIN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "36e614ed-930c-4b77-8dea-e7eb2cf53dbc",
+						"type": "text/javascript",
+						"exec": [
+							"const jsonData = JSON.parse(responseBody);",
+							"",
+							"// VALIDATE JSON",
+							"tests[\"Validate JSON - Body - Present\"] = ((responseBody) !== undefined && (responseBody.length > 1))",
+							"tests[\"Validate JSON - Response - Object\"] = (typeof jsonData) === 'object';",
+							"tests[\"Validate JSON - Header - Content-Type - Present\"] = postman.getResponseHeader(\"Content-Type\") !== undefined;",
+							"tests[\"Validate JSON - Header - Content-Type - JSON\"] = postman.getResponseHeader(\"Content-Type\").has('application/json');",
+							"",
+							"// VALIDATE STATUS CODE",
+							"tests[\"Validate STATUS - Code - 200\"] = responseCode.code === 200;",
+							"",
+							"// VALIDATE BODY",
+							"// token",
+							"tests[\"Validate BODY - token - Present\"] = jsonData.hasOwnProperty('token');",
+							"tests[\"Validate BODY - token - String\"] = typeof jsonData.token === 'string' && jsonData.token.length > 0;",
+							"",
+							"// expires",
+							"tests[\"Validate BODY - expires - Present\"] = jsonData.hasOwnProperty('expires');",
+							"tests[\"Validate BODY - expires - String\"] = typeof jsonData.expires === 'string' && jsonData.expires.length > 0;",
+							"",
+							"// SET ENVIRONMENT VARIABLE",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"tests[\"Validate ENVVARS - token - Present\"] = postman.getEnvironmentVariable(\"token\") === jsonData.token;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"test@example.com\",\n\t\"password\": \"asdf1234\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "USERS ME",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/users/me",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"me"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
