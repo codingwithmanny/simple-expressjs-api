@@ -1,4 +1,4 @@
-# expressjs-api
+# simple-expressjs-api
 
 Simple ExpressJS API that demonstrates JWT validation with middleware and user password encryption.
 
@@ -18,4 +18,4 @@ Load in the browser:
 
 ## Tests
 
-Look into the folder directory `/postman` and load both those files into *POSTMAN APP*.
+Look into the folder directory `/postman` and load both those files into **POSTMAN APP** (https://www.getpostman.com).
