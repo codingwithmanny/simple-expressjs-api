@@ -117,6 +117,16 @@ app.post('/auth/login', (req, res) => {
 });
 
 /* ============================
+ENDPOINTS - AUTH - VERIFY
+============================ */
+app.get('/auth/verify', apiMiddleware, (req, res) => {
+  res.send({
+    data: true
+  });
+});
+
+
+/* ============================
 ENDPOINTS - API - USER
 ============================ */
 app.get('/users/me', apiMiddleware, (req, res) => {
